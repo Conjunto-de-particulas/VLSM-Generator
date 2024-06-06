@@ -4,6 +4,8 @@ import metodos
 
 st.title('Subnetting VLSM')
 
+st.write('Calculadora de subredes con VLSM ')
+
 dip = st.text_input('Direccion IP', '')
 mr = st.text_input('Mascara de red(Abreviada)', '')
 numSubRedes = st.text_input('Numero de subredes', '')
@@ -16,8 +18,12 @@ except Exception as e:
 subRedes = metodos.generarSubredes(numSubRedes)
 dfSubRedes = pd.DataFrame(subRedes)
 
+st.write('')
+st.markdown('Numero de hosts por subredes')
 edited_df = st.data_editor(dfSubRedes)
 dfSubRedes = edited_df.copy()
+st.write('')
+
 
 direccionRed = f'{dip}/{mr}'
 listaNumHosts = metodos.generarListaCantidadHosts(dfSubRedes)
@@ -55,9 +61,13 @@ if metodos.checkAllnoNone(listaNumHosts) == True and len(listaNumHosts) > 0:
     results.update({'Dirección de broadcast': listOfList[5]})
     results.update({'Total de Hosts': listOfList[6]})
     
-
+st.markdown('Subredes')
 dfResults = pd.DataFrame(results)
 tablaResults = st.data_editor(dfResults)
+
+st.write('')
+st.write('')
+st.image('Logo_uninorte_colombia.jpg', use_column_width=True)
         
 
 
