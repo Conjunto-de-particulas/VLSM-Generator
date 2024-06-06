@@ -13,5 +13,5 @@ Se requiere tener streamlit, para su instalación puede usar el comando 'pip ins
 
 ## Estudiantes
 
-Camilo Huyke
-Maria del Toro
+-Camilo Huyke
+-Maria del Toro
